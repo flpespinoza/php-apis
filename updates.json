@@ -1,1 +1,21 @@
-{"ok":true,"result":[]}
+[
+    {
+        "update_id": 261995970,
+        "message": {
+            "message_id": 15,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581531975,
+            "text": "Abc"
+        }
+    }
+]

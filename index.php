@@ -15,9 +15,11 @@ echo $result;*/
 include_once('telegram_bot.php');
 $token = '1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q';
 $bot = new TelegramBot($token);
+$last = $bot->getLastUpdate();
 
-$up = $bot->getUpdates('261995969');
-file_put_contents('updates.json', $up);
+var_dump($last);
+//$up = $bot->getUpdates();
+//file_put_contents('updates.json', json_encode($up, JSON_PRETTY_PRINT));
 
 //$res = $bot->sendMessage('1018428160', 'prueba4');
 //file_put_contents('updates.json', $res);

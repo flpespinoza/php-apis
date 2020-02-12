@@ -2,11 +2,11 @@
 
 class TelegramBot
 {
-    private $endpoint, $curl, $last_update, $started;
+    private $endpoint, $curl, $last_update, $init_ts;
 
     public function __construct($token)
     {
-        $this->started = time();
+        $this->init_ts = time();
         $this->endpoint = "https://api.telegram.org/bot{$token}/";
         $this->curl = curl_init();
         curl_setopt_array($this->curl, array(
@@ -18,6 +18,18 @@ class TelegramBot
             CURLOPT_CONNECTTIMEOUT => 2,
             CURLOPT_HTTPHEADER     => ["Connection: Keep-Alive", "Keep-Alive: 120"]
         ));
+
+        $this->init();
+    }
+
+    private function init()
+    {
+        $msgs = $this->getUpdates();
+        if(count($msgs))
+        {
+            $update = $msgs[count($msgs) - 1]['update_id'];
+            $this->setLastUpdate($update + 1);
+        }
     }
 
     private function request($method, $args = array())
@@ -27,15 +39,54 @@ class TelegramBot
             CURLOPT_POSTFIELDS => empty($args) ? null : $args,
         ]);
 
-        $result = curl_exec($this->curl);
-            
-        return $result;
+        $result_curl = curl_exec($this->curl);
+        if($result_curl === false)
+        {
+            $resp = array(
+                "ok" => false,
+                "error_code" => curl_errno($this->curl),
+                "error_descripcion" => curl_error($this->curl),
+                "curl_error" => true
+            );
+            return json_decode(json_encode($resp), true);
+        }
+
+        $resp = json_decode($result_curl, true);
+        if($resp === null )
+        {
+            $arr = [
+                "ok"          => false,
+                "error_code"  => json_last_error(),
+                "description" => json_last_error_msg(),
+                "json_error"  => true
+            ];
+            $resp = json_decode(json_encode($arr), true);
+        }
+
+        return $resp;
     }
 
-    public function getUpdates($offset = '')
+    public function setLastUpdate($update)
     {
-       $args = ($offset) ? array('offset' => $offset) : array();           
-       return $this->request('getUpdates', $args);
+        $this->last_update = $update;
+    }
+
+    public function getLastUpdate()
+    {
+        return $this->last_update;
+    }
+
+    public function getUpdates()
+    {
+       $args = ($this->last_update) ? array('offset' => $this->last_update) : array();           
+       $resp = $this->request('getUpdates', $args);
+
+       if($resp['ok'] == true)
+       {
+           return $resp['result'];
+       }
+
+       return array();
     }
 
     public function sendMessage($chatId, $message)
@@ -49,6 +100,5 @@ class TelegramBot
         $args = array('chat_id' => $chatId, 'message_id' => $msgId);
         return $this->request('deleteMessage', $args);
     }
-
     
 }
