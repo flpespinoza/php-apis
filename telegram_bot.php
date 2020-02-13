@@ -19,17 +19,25 @@ class TelegramBot
             CURLOPT_HTTPHEADER     => ["Connection: Keep-Alive", "Keep-Alive: 120"]
         ));
 
-        $this->init();
+        try
+        {
+            $this->init();
+        }
+        catch(Exception $e)
+        {
+            throw new Exception($e->getMessage());
+        }
     }
 
     private function init()
     {
-        $msgs = $this->getUpdates();
-        if(count($msgs))
+        $me = $this->getMe();
+        if($me['ok'] != true)
         {
-            $update = $msgs[count($msgs) - 1]['update_id'];
-            $this->setLastUpdate($update + 1);
+            throw new Exception($me['description']);
         }
+
+        $this->setInitUpdate();
     }
 
     private function request($method, $args = array())
@@ -66,6 +74,16 @@ class TelegramBot
         return $resp;
     }
 
+    public function setInitUpdate()
+    {
+        $msgs = $this->getUpdates();
+        if(count($msgs))
+        {
+            $update = $msgs[count($msgs) - 1]['update_id'];
+            $this->setLastUpdate($update + 1);
+        }
+    }
+
     public function setLastUpdate($update)
     {
         $this->last_update = $update;
@@ -99,6 +117,11 @@ class TelegramBot
     {
         $args = array('chat_id' => $chatId, 'message_id' => $msgId);
         return $this->request('deleteMessage', $args);
+    }
+
+    public function getMe()
+    {
+        return $this->request('getMe');
     }
     
 }
