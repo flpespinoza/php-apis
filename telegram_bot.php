@@ -96,7 +96,7 @@ class TelegramBot
 
     public function getUpdates()
     {
-       $args = ($this->last_update) ? array('offset' => $this->last_update) : array();           
+       $args = ($this->last_update) ? array('offset' => $this->last_update, 'limit' => 1) : array();           
        $resp = $this->request('getUpdates', $args);
 
        if($resp['ok'] == true)

@@ -1,8 +1,17 @@
+Vuelta 0: 
+[]
+Vuelta 1: 
+[]
+Vuelta 2: 
+[]
+Vuelta 3: 
+[]
+Vuelta 4: 
 [
     {
-        "update_id": 261995970,
+        "update_id": 261995974,
         "message": {
-            "message_id": 15,
+            "message_id": 19,
             "from": {
                 "id": 1018428160,
                 "is_bot": false,
@@ -14,8 +23,589 @@
                 "first_name": "Felipe",
                 "type": "private"
             },
-            "date": 1581531975,
+            "date": 1581620872,
+            "text": "Nuevo"
+        }
+    }
+]
+Vuelta 5: 
+[]
+Vuelta 6: 
+[]
+Vuelta 7: 
+[
+    {
+        "update_id": 261995975,
+        "message": {
+            "message_id": 20,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581620883,
+            "text": "Nuevow"
+        }
+    }
+]
+Vuelta 8: 
+[
+    {
+        "update_id": 261995976,
+        "message": {
+            "message_id": 21,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581620884,
+            "text": "Fjfj"
+        }
+    }
+]
+Vuelta 9: 
+[
+    {
+        "update_id": 261995977,
+        "message": {
+            "message_id": 22,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581620885,
+            "text": "Fjfjf"
+        }
+    }
+]
+Vuelta 10: 
+[]
+Vuelta 11: 
+[]
+Vuelta 12: 
+[
+    {
+        "update_id": 261995978,
+        "message": {
+            "message_id": 23,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581620900,
+            "text": "Bfahrsj"
+        }
+    }
+]
+Vuelta 13: 
+[]
+Vuelta 14: 
+[
+    {
+        "update_id": 261995979,
+        "message": {
+            "message_id": 24,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581620905,
+            "text": "Thfgt"
+        }
+    }
+]
+Vuelta 15: 
+[]
+Vuelta 16: 
+[
+    {
+        "update_id": 261995980,
+        "message": {
+            "message_id": 25,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581620912,
+            "text": "Yrfhdd"
+        }
+    }
+]
+Vuelta 17: 
+[]
+Vuelta 18: 
+[]
+Vuelta 19: 
+[
+    {
+        "update_id": 261995981,
+        "message": {
+            "message_id": 26,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581620922,
+            "text": "Ghd"
+        }
+    }
+]
+Vuelta 0: 
+[]
+Vuelta 1: 
+[]
+Vuelta 2: 
+[]
+Vuelta 3: 
+[
+    {
+        "update_id": 261995984,
+        "message": {
+            "message_id": 29,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621012,
+            "text": "Ggg"
+        }
+    }
+]
+Vuelta 4: 
+[
+    {
+        "update_id": 261995985,
+        "message": {
+            "message_id": 30,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621013,
+            "text": "Ffg"
+        }
+    }
+]
+Vuelta 5: 
+[
+    {
+        "update_id": 261995986,
+        "message": {
+            "message_id": 31,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621014,
+            "text": "Fgg"
+        }
+    }
+]
+Vuelta 6: 
+[]
+Vuelta 7: 
+[
+    {
+        "update_id": 261995987,
+        "message": {
+            "message_id": 32,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621025,
+            "text": "Et"
+        }
+    }
+]
+Vuelta 8: 
+[
+    {
+        "update_id": 261995988,
+        "message": {
+            "message_id": 33,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621026,
+            "text": "Fjf"
+        }
+    }
+]
+Vuelta 9: 
+[
+    {
+        "update_id": 261995989,
+        "message": {
+            "message_id": 34,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621028,
+            "text": "Cfs"
+        }
+    }
+]
+Vuelta 10: 
+[
+    {
+        "update_id": 261995990,
+        "message": {
+            "message_id": 35,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621030,
+            "text": "Hjsq"
+        }
+    }
+]
+Vuelta 11: 
+[
+    {
+        "update_id": 261995991,
+        "message": {
+            "message_id": 36,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621031,
+            "text": "Fggd"
+        }
+    }
+]
+Vuelta 12: 
+[]
+Vuelta 13: 
+[]
+Vuelta 14: 
+[]
+Vuelta 15: 
+[]
+Vuelta 16: 
+[
+    {
+        "update_id": 261995992,
+        "message": {
+            "message_id": 37,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621054,
+            "text": "Rfdd"
+        }
+    }
+]
+Vuelta 17: 
+[]
+Vuelta 18: 
+[]
+Vuelta 19: 
+[]
+Vuelta 0: 
+[]
+Vuelta 1: 
+[
+    {
+        "update_id": 261995993,
+        "message": {
+            "message_id": 38,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621474,
+            "text": "\/venta",
+            "entities": [
+                {
+                    "offset": 0,
+                    "length": 6,
+                    "type": "bot_command"
+                }
+            ]
+        }
+    }
+]
+Vuelta 2: 
+[
+    {
+        "update_id": 261995994,
+        "message": {
+            "message_id": 40,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621479,
+            "text": "Hola"
+        }
+    }
+]
+Vuelta 3: 
+[]
+Vuelta 4: 
+[
+    {
+        "update_id": 261995995,
+        "message": {
+            "message_id": 42,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621490,
+            "text": "\/compra",
+            "entities": [
+                {
+                    "offset": 0,
+                    "length": 7,
+                    "type": "bot_command"
+                }
+            ]
+        }
+    }
+]
+Vuelta 5: 
+[
+    {
+        "update_id": 261995996,
+        "message": {
+            "message_id": 44,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621497,
             "text": "Abc"
+        }
+    }
+]
+Vuelta 6: 
+[
+    {
+        "update_id": 261995997,
+        "message": {
+            "message_id": 45,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621498,
+            "text": "Def"
+        }
+    }
+]
+Vuelta 7: 
+[]
+Vuelta 8: 
+[]
+Vuelta 9: 
+[
+    {
+        "update_id": 261995998,
+        "message": {
+            "message_id": 48,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621521,
+            "text": "Def"
+        }
+    }
+]
+Vuelta 10: 
+[]
+Vuelta 11: 
+[]
+Vuelta 12: 
+[]
+Vuelta 13: 
+[]
+Vuelta 14: 
+[
+    {
+        "update_id": 261995999,
+        "message": {
+            "message_id": 50,
+            "from": {
+                "id": 1018428160,
+                "is_bot": false,
+                "first_name": "Felipe",
+                "language_code": "es"
+            },
+            "chat": {
+                "id": 1018428160,
+                "first_name": "Felipe",
+                "type": "private"
+            },
+            "date": 1581621546,
+            "text": "\/venta",
+            "entities": [
+                {
+                    "offset": 0,
+                    "length": 6,
+                    "type": "bot_command"
+                }
+            ]
         }
     }
 ]
