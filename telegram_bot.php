@@ -74,7 +74,7 @@ class TelegramBot
         return $resp;
     }
 
-    public function setInitUpdate()
+    private function setInitUpdate()
     {
         $msgs = $this->getUpdates();
         if(count($msgs))
@@ -122,6 +122,12 @@ class TelegramBot
     public function getMe()
     {
         return $this->request('getMe');
+    }
+
+    public function sendChatAction($chat_id)
+    {
+        $args = array('chat_id' => $chat_id, 'action' => 'typing');
+        return $this->request('sendChatAction', $args);
     }
     
 }
