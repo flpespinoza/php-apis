@@ -11,26 +11,43 @@ $bot = new TelegramBot($token);
 while($times < 50)
 {
     $msg = $bot->getUpdates();
+    $msg = $msg[count($msg) - 1];
     
-    $last_msg = $msg[count($msg) - 1]['update_id'];
+    $last_msg = $msg['update_id'];
     $bot->setLastUpdate($last_msg + 1);
 
-    $msg_type = $bot->getMsgType($msg[count($msg) - 1]);
-    $chat_id = $msg[count($msg) - 1]['message']['chat']['id'];
-    $msg_txt = $msg[count($msg) - 1]['message']['text'];
-
+    $msg_type = $bot->getMsgType($msg);
+    $uid = $msg['message']['from']['id'];
+    $chat_id = $msg['message']['chat']['id'];
+    
     if($msg_type == 'register')
-    {
-        $uid = $msg[count($msg) - 1]['message']['contact']['user_id'];
-        $phone = $msg[count($msg) - 1]['message']['contact']['phone_number'];
+    {    
+        $phone = $msg['message']['contact']['phone_number'];
         $bot->setUserPhone($uid, $phone);
         $bot->sendMessage($chat_id, "Se ha registrado el numero {$phone}");
     }
     else
     {
+        $msg_txt = $msg['message']['text'];
         if($msg_txt == '/start')
         {
-            
+           $bot->sendMessage($chat_id, "Bienvenido, para comenzar envia el mensaje /registrar"); 
+        }
+        else if($msg_txt == '/registrar')
+        {
+            $bot->requestUserData($chat_id);
+        }
+        else
+        {
+            $phone = $bot->getUserPhone($uid);
+            if(!$phone)
+            {
+                $bot->requestUserData($chat_id);
+            }
+            else
+            {
+                $bot->sendMessage($chat_id, "Respuesta a mensaje: {$msg_txt}, telefono de usuario {$phone}");
+            }
         }
     }
        
