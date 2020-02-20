@@ -2,7 +2,7 @@
 
 class TelegramBot
 {
-    private $endpoint, $curl, $last_update, $init_ts;
+    private $endpoint, $curl, $last_update, $init_ts, $users;
 
     public function __construct($token)
     {
@@ -133,5 +133,42 @@ class TelegramBot
         $args = array('chat_id' => $chat_id, 'action' => 'typing');
         return $this->request('sendChatAction', $args);
     }
+
+    public function getUserPhone($user_id)
+    {
+        return (isset($this->users[$user_id])) ? $this->users[$user_id] : false;
+    }
+
+    public function setUserPhone($user_id, $phone)
+    {
+        $this->users[$user_id] = $phone;
+    }
     
+    public function requestUserData($chat_id)
+    {
+        $msg = "Para registrar tu teléfono presiona el boton de Registrar";
+        $markup = array
+        (
+            'keyboard' => array
+            (
+                array
+                (
+                    array
+                    (
+                        'text' => 'Registrar', 
+                        'request_contact' => true
+                    )
+                )
+            ),
+            'resize_keyboard' => true,
+            'one_time_keyboard' => true
+        );
+
+        $this->sendMessage($chat_id, $msg, $markup);
+    }
+
+    public function getMsgType($msg)
+    {
+       return (isset($msg['message']['contact'])) ? 'register' : 'text';
+    }
 }

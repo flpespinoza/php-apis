@@ -15,34 +15,25 @@ while($times < 50)
     $last_msg = $msg[count($msg) - 1]['update_id'];
     $bot->setLastUpdate($last_msg + 1);
 
+    $msg_type = $bot->getMsgType($msg[count($msg) - 1]);
     $chat_id = $msg[count($msg) - 1]['message']['chat']['id'];
     $msg_txt = $msg[count($msg) - 1]['message']['text'];
-    
-    if($msg_txt == '/start')
-    {
-        $bot->sendChatAction($chat_id);
-        //sleep(2);
 
-        $markup = array
-        (
-            'keyboard' => array
-            (
-                array
-                (
-                    array
-                    (
-                        'text' => 'Registrar', 
-                        'request_contact' => true
-                    )
-                )
-            ),
-            'resize_keyboard' => true,
-            'one_time_keyboard' => true
-        );
-        $res = $bot->sendMessage($chat_id, "Registra tu numero presionando el boton", $markup);
-        var_dump($res);
+    if($msg_type == 'register')
+    {
+        $uid = $msg[count($msg) - 1]['message']['contact']['user_id'];
+        $phone = $msg[count($msg) - 1]['message']['contact']['phone_number'];
+        $bot->setUserPhone($uid, $phone);
+        $bot->sendMessage($chat_id, "Se ha registrado el numero {$phone}");
     }
-    
+    else
+    {
+        if($msg_txt == '/start')
+        {
+            
+        }
+    }
+       
     $times++;
     sleep(1);
 }
