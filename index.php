@@ -29,7 +29,7 @@ while($times < 50)
     else
     {
         $msg_txt = $msg['message']['text'];
-        if($msg_txt == '/start')
+        if($msg_txt == '/start' || $msg_txt == '/restart')
         {
            $bot->sendMessage($chat_id, "Bienvenido, para comenzar envia el mensaje /registrar"); 
         }
