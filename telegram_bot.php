@@ -107,9 +107,13 @@ class TelegramBot
        return array();
     }
 
-    public function sendMessage($chatId, $message)
+    public function sendMessage($chatId, $message, $markup = null)
     {
         $args = array('chat_id' => $chatId, 'text' => $message);
+        if($markup)
+        {
+            $args['reply_markup'] = json_encode($markup);
+        }
         return $this->request('sendMessage', $args);
     }
 
