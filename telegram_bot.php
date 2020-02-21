@@ -1,6 +1,6 @@
 <?php
 
-class TelegramBot
+class TelegramBotV2
 {
     private $endpoint, $curl, $last_update, $init_ts, $users;
 

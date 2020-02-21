@@ -1,8 +1,7 @@
 <?php
-/**
-* 
-*/
-class TelegramBot {
+
+class TelegramBot 
+{
     private $endPoint,
             $initTs,
             $curlObj, 
@@ -97,18 +96,24 @@ class TelegramBot {
         $this->initUpdate();
     }
 
+    private function getMe()
+    {
+        return $this->doRequest('getMe');
+    }
+
     /**
     * Obtener último mensaje recibido por el bot    
     */
     private function initUpdate()
     {
         $messages = $this->getUpdates();
-        if(count($$messages))
+        if(count($messages))
         {
-            $lastUpdate = $$messages[count($$messages) - 1]['update_id'];
+            $lastUpdate = $messages[count($messages) - 1]['update_id'];
             $this->setLastUpdate($lastUpdate + 1);
         }
     }
+
     /*
     * Obtener mensajes recibidos por el bot, si el valor lastUpdate no tiene valor se obtiene un array con los últimos mensajes, en caso contrario
     * se obtiene un mensaje por llamado al metodo
@@ -155,12 +160,24 @@ class TelegramBot {
     public function getMessage()
     {
         $lastMsg = $this->getUpdates();
-        $lastMsg = $lastMsg[count($lastMsg) - 1];
-        $this->currentChat = $lastMsg['message']['chat']['id'];
-        $this->currentMsg = $lastMsg['message'];
-        $this->currentUser = $lastMsg['message']['from']['id'];
-        $this->messageType = (isset($lastMsg['message']['contact'])) ? 'register' : 'text';
-        $this->setLastUpdate($lastMsg['update_id'] + 1);
+        if(count($lastMsg))
+        {
+            $lastMsg = $lastMsg[count($lastMsg) - 1];
+            $this->currentChat = $lastMsg['message']['chat']['id'];
+            $this->currentMsg = $lastMsg['message'];
+            $this->currentUser = $lastMsg['message']['from']['id'];
+            $this->messageType = (isset($lastMsg['message']['contact'])) ? 'register' : 'text';
+            $this->setLastUpdate($lastMsg['update_id'] + 1);
+        }
+        else
+        {
+            $this->currentMsg = array();
+        }
+    }
+
+    public function getCurrentMessage()
+    {
+        return $this->currentMsg;
     }
 
     /*
@@ -192,17 +209,17 @@ class TelegramBot {
             'one_time_keyboard' => true
         );
 
-        $this->sendMessage($this->currentChat, $msg, $markup);
+        return $this->sendMessage($msg, $markup);
     }
 
-    public function getUserPhone($userId)
+    public function getUserPhone()
     {
-        return (isset($this->usersList[$userId])) ? $this->usersList[$userId] : false;
+        return (isset($this->usersList[$this->currentUser])) ? $this->usersList[$this->currentUser] : false;
     }
 
-    public function setUserPhone($userId, $phoneNumber)
+    public function setUserPhone($phoneNumber)
     {
-        $this->usersList[$userId] = $phoneNumber;
+        $this->usersList[$this->currentUser] = substr($phoneNumber, 2);
     }
 
     public function getMesageType()

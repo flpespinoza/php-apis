@@ -1,56 +1,43 @@
 <?php
 
-include_once('telegram_bot.php');
+include_once('telegram_bot_v2.php');
 //1087997685:AAEcieYMMY7v7ZQbwAOEe4rMZwba2MadpTw
 //1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q
 $token = '1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q';
 $times = 0;
 
 $bot = new TelegramBot($token);
-
-while($times < 50)
+while($times < 30)
 {
-    $msg = $bot->getUpdates();
-    $msg = $msg[count($msg) - 1];
-    
-    $last_msg = $msg['update_id'];
-    $bot->setLastUpdate($last_msg + 1);
+    $bot->getMessage();
+    $currentMsg = $bot->getCurrentMessage();
 
-    $msg_type = $bot->getMsgType($msg);
-    $uid = $msg['message']['from']['id'];
-    $chat_id = $msg['message']['chat']['id'];
-    
-    if($msg_type == 'register')
-    {    
-        $phone = $msg['message']['contact']['phone_number'];
-        $bot->setUserPhone($uid, $phone);
-        $bot->sendMessage($chat_id, "Se ha registrado el numero {$phone}");
-    }
-    else
+    if(!empty($currentMsg))
     {
-        $msg_txt = $msg['message']['text'];
-        if($msg_txt == '/start' || $msg_txt == '/restart')
-        {
-           $bot->sendMessage($chat_id, "Bienvenido, para comenzar envia el mensaje /registrar"); 
-        }
-        else if($msg_txt == '/registrar')
-        {
-            $bot->requestUserData($chat_id);
-        }
-        else
-        {
-            $phone = $bot->getUserPhone($uid);
-            if(!$phone)
-            {
-                $bot->requestUserData($chat_id);
-            }
-            else
-            {
-                $bot->sendMessage($chat_id, "Respuesta a mensaje: {$msg_txt}, telefono de usuario {$phone}");
-            }
-        }
+       if($bot->getMesageType() == 'text')
+       {
+           if($currentMsg['text'] == '/register')
+           {
+                if(!$bot->getUserPhone())
+                {
+                    $req = $bot->requestUserData();
+                }
+                else
+                {
+                    $bot->sendMessage('Tu usuario ya esta registrado con numero: ' . $bot->getUserPhone());
+                } 
+           }
+           else
+           {
+                $bot->sendMessage("Respuesta a mensaje: {$currentMsg['text']}");
+           }       
+       }
+       else
+       {
+            $bot->setUserPhone($currentMsg['contact']['phone_number']);                
+       } 
     }
-       
+
     $times++;
     sleep(1);
 }
