@@ -1,0 +1,212 @@
+<?php
+/**
+* 
+*/
+class TelegramBot {
+    private $endPoint,
+            $initTs,
+            $curlObj, 
+            $currentMsg, 
+            $currentChat, 
+            $currentUser, 
+            $usersList,
+            $lastUpdate,
+            $messageType;
+            
+    
+    public function __construct($token)
+    {
+        $this->endPoint = "https://api.telegram.org/bot{$token}/";
+        $this->initTs = time();
+        $this->initCurl();
+        try
+        {
+            $this->initBot();
+        }
+        catch(Exception $e)
+        {
+            throw new Exception($e->getMessage());
+        }
+    }
+
+    /*
+    * Iniciar objecto curl
+    */
+    private function initCurl()
+    {
+        $this->curlObj = curl_init();
+        curl_setopt_array($this->curlObj, array(
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST           => true,
+            CURLOPT_FORBID_REUSE   => true,
+            CURLOPT_HEADER         => false,
+            CURLOPT_TIMEOUT        => 120,
+            CURLOPT_CONNECTTIMEOUT => 2,
+            CURLOPT_HTTPHEADER     => ["Connection: Keep-Alive", "Keep-Alive: 120"]
+        ));
+    }
+
+    /**
+     * Realiza las peticiones a la API de Telegram 
+     */
+    private function doRequest($methodName, $args = array())
+    {
+        curl_setopt_array($this->curlObj, [
+            CURLOPT_URL        => $this->endPoint . $methodName,
+            CURLOPT_POSTFIELDS => empty($args) ? null : $args,
+        ]);
+
+        $result_curl = curl_exec($this->curlObj);
+        if($result_curl === false)
+        {
+            $resp = array(
+                "ok" => false,
+                "error_code" => curl_errno($this->curl),
+                "error_descripcion" => curl_error($this->curl),
+                "curl_error" => true
+            );
+            return json_decode(json_encode($resp), true);
+        }
+
+        $resp = json_decode($result_curl, true);
+        if($resp === null )
+        {
+            $arr = [
+                "ok"          => false,
+                "error_code"  => json_last_error(),
+                "description" => json_last_error_msg(),
+                "json_error"  => true
+            ];
+            $resp = json_decode(json_encode($arr), true);
+        }
+
+        return $resp;
+    }
+
+    /*
+    * Iniciar el bot de telegram, validar credenciales y obtener el ultimo mensaje recibido
+    */
+    private function initBot()
+    {
+        $me = $this->getMe();
+        if($me['ok'] != true)
+        {
+            throw new Exception($me['description']);
+        }
+
+        $this->initUpdate();
+    }
+
+    /**
+    * Obtener último mensaje recibido por el bot    
+    */
+    private function initUpdate()
+    {
+        $messages = $this->getUpdates();
+        if(count($$messages))
+        {
+            $lastUpdate = $$messages[count($$messages) - 1]['update_id'];
+            $this->setLastUpdate($lastUpdate + 1);
+        }
+    }
+    /*
+    * Obtener mensajes recibidos por el bot, si el valor lastUpdate no tiene valor se obtiene un array con los últimos mensajes, en caso contrario
+    * se obtiene un mensaje por llamado al metodo
+    */
+    public function getUpdates()
+    {
+       $args = ($this->lastUpdate) ? array('offset' => $this->lastUpdate, 'limit' => 1) : array();           
+       $resp = $this->doRequest('getUpdates', $args);
+
+       if($resp['ok'] == true)
+       {
+           return $resp['result'];
+       }
+
+       return array();
+    }
+
+    public function setLastUpdate($update)
+    {
+        $this->lastUpdate = $update;
+    }
+
+    public function getLastUpdate()
+    {
+        return $this->lastUpdate;
+    }
+
+    /*
+    * Enviar un mensaje al usuario
+    */
+    public function sendMessage($message, $markup = null)
+    {
+        $args = array('chat_id' => $this->currentChat, 'text' => $message);
+        if($markup)
+        {
+            $args['reply_markup'] = json_encode($markup);
+        }
+        return $this->doRequest('sendMessage', $args);
+    }
+
+    /**
+    * Obtiene el mensaje mas reciente recibido por el bot
+    */
+    public function getMessage()
+    {
+        $lastMsg = $this->getUpdates();
+        $lastMsg = $lastMsg[count($lastMsg) - 1];
+        $this->currentChat = $lastMsg['message']['chat']['id'];
+        $this->currentMsg = $lastMsg['message'];
+        $this->currentUser = $lastMsg['message']['from']['id'];
+        $this->messageType = (isset($lastMsg['message']['contact'])) ? 'register' : 'text';
+        $this->setLastUpdate($lastMsg['update_id'] + 1);
+    }
+
+    /*
+    * Envia una accion en el chat para que el usuario sepa que el bot esta ejecutando una accion
+    */
+    public function sendChatAction()
+    {
+        $args = array('chat_id' => $this->currentChat, 'action' => 'typing');
+        return $this->doRequest('sendChatAction', $args);
+    }
+
+    public function requestUserData()
+    {
+        $msg = "Para registrar tu teléfono presiona el boton de Registrar";
+        $markup = array
+        (
+            'keyboard' => array
+            (
+                array
+                (
+                    array
+                    (
+                        'text' => 'Registrar', 
+                        'request_contact' => true
+                    )
+                )
+            ),
+            'resize_keyboard' => true,
+            'one_time_keyboard' => true
+        );
+
+        $this->sendMessage($this->currentChat, $msg, $markup);
+    }
+
+    public function getUserPhone($userId)
+    {
+        return (isset($this->usersList[$userId])) ? $this->usersList[$userId] : false;
+    }
+
+    public function setUserPhone($userId, $phoneNumber)
+    {
+        $this->usersList[$userId] = $phoneNumber;
+    }
+
+    public function getMesageType()
+    {
+        return $this->messageType;
+    }
+}
