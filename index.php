@@ -24,7 +24,7 @@ while($times < 30)
            {
                 if(!$bot->getUserPhone())
                 {
-                    $req = $bot->requestUserData();
+                    $bot->requestUserData();
                 }
                 else
                 {
@@ -33,20 +33,27 @@ while($times < 30)
            }
            else
            {
-                if(obtener_venta_mensaje($currentMsg['text']))
+               if(!$bot->getUserPhone())
                 {
-                    $bot->sendMessage("Tu solicitud de venta esta siendo atendida", true);
+                    $bot->requestUserData("Tu usuario no esta registrado, para hacerlo envia el mensaje /register");
                 }
                 else
                 {
-                    $bot->sendMessage("Sintaxis de venta incorrecta", true);
-                }
-                
+                    if(obtener_venta_mensaje($currentMsg['text']))
+                    {
+                        $bot->sendMessage("Tu solicitud de venta esta siendo atendida", true);
+                    }
+                    else
+                    {
+                        $bot->sendMessage("Sintaxis de venta incorrecta", true);
+                    }
+                }      
            }       
        }
        else
        {
-            $bot->setUserPhone($currentMsg['contact']['phone_number']);                
+            $bot->setUserPhone($currentMsg['contact']['phone_number']);
+            $bot->sendMessage("Tu usuario ha sido registrado correctamente");                
        } 
     }
 

@@ -196,9 +196,8 @@ class TelegramBot
         return $this->doRequest('sendChatAction', $args);
     }
 
-    public function requestUserData()
+    public function requestUserData($msgTxt = "Para registrar tu teléfono presiona el boton de Registrar")
     {
-        $msg = "Para registrar tu teléfono presiona el boton de Registrar";
         $markup = array
         (
             'keyboard' => array
@@ -216,7 +215,7 @@ class TelegramBot
             'one_time_keyboard' => true
         );
 
-        return $this->sendMessage($msg, false, $markup);
+        return $this->sendMessage($msgTxt, false, $markup);
     }
 
     public function getUserPhone()
