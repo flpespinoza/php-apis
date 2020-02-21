@@ -16,7 +16,11 @@ while($times < 30)
     {
        if($bot->getMesageType() == 'text')
        {
-           if($currentMsg['text'] == '/register')
+           if($currentMsg['text'] == '/start')
+           {
+                $bot->sendMessage('Bienvenido, para comenzar enviar el mensaje /register');
+           }
+           elseif($currentMsg['text'] == '/register')
            {
                 if(!$bot->getUserPhone())
                 {
@@ -29,7 +33,7 @@ while($times < 30)
            }
            else
            {
-                $bot->sendMessage("Respuesta a mensaje: {$currentMsg['text']}");
+                $bot->sendMessage("Respuesta a mensaje: {$currentMsg['text']}", true);
            }       
        }
        else

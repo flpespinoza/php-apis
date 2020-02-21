@@ -1,0 +1,660 @@
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => 
+    [currentChat:TelegramBot:private] => 
+    [currentUser:TelegramBot:private] => 
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 
+    [messageType:TelegramBot:private] => 
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => 
+    [currentChat:TelegramBot:private] => 
+    [currentUser:TelegramBot:private] => 
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 
+    [messageType:TelegramBot:private] => 
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => 
+    [currentChat:TelegramBot:private] => 
+    [currentUser:TelegramBot:private] => 
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 
+    [messageType:TelegramBot:private] => 
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => 
+    [currentChat:TelegramBot:private] => 
+    [currentUser:TelegramBot:private] => 
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 
+    [messageType:TelegramBot:private] => 
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => 
+    [currentChat:TelegramBot:private] => 
+    [currentUser:TelegramBot:private] => 
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 
+    [messageType:TelegramBot:private] => 
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => 
+    [currentChat:TelegramBot:private] => 
+    [currentUser:TelegramBot:private] => 
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 
+    [messageType:TelegramBot:private] => 
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => 
+    [currentChat:TelegramBot:private] => 
+    [currentUser:TelegramBot:private] => 
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 
+    [messageType:TelegramBot:private] => 
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => 
+    [currentChat:TelegramBot:private] => 
+    [currentUser:TelegramBot:private] => 
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 
+    [messageType:TelegramBot:private] => 
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 260
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307054
+            [text] => Abc
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996124
+    [messageType:TelegramBot:private] => text
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 260
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307054
+            [text] => Abc
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996124
+    [messageType:TelegramBot:private] => text
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 262
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307059
+            [text] => Def
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996125
+    [messageType:TelegramBot:private] => text
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 264
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307060
+            [text] => Scd
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996126
+    [messageType:TelegramBot:private] => text
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 265
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307061
+            [text] => Ccd
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996127
+    [messageType:TelegramBot:private] => text
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 267
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307062
+            [text] => Xcc
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996128
+    [messageType:TelegramBot:private] => text
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 267
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307062
+            [text] => Xcc
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996128
+    [messageType:TelegramBot:private] => text
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 267
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307062
+            [text] => Xcc
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996128
+    [messageType:TelegramBot:private] => text
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 267
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307062
+            [text] => Xcc
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996128
+    [messageType:TelegramBot:private] => text
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 267
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307062
+            [text] => Xcc
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996128
+    [messageType:TelegramBot:private] => text
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 267
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307062
+            [text] => Xcc
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996128
+    [messageType:TelegramBot:private] => text
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 267
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307062
+            [text] => Xcc
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996128
+    [messageType:TelegramBot:private] => text
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 267
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307062
+            [text] => Xcc
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996128
+    [messageType:TelegramBot:private] => text
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 267
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307062
+            [text] => Xcc
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996128
+    [messageType:TelegramBot:private] => text
+)
+
+
+Bot:
+TelegramBot Object
+(
+    [endPoint:TelegramBot:private] => https://api.telegram.org/bot1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q/
+    [initTs:TelegramBot:private] => 1582307030
+    [curlObj:TelegramBot:private] => Resource id #5
+    [currentMsg:TelegramBot:private] => Array
+        (
+            [message_id] => 267
+            [from] => Array
+                (
+                    [id] => 1018428160
+                    [is_bot] => 
+                    [first_name] => Felipe
+                    [language_code] => es
+                )
+
+            [chat] => Array
+                (
+                    [id] => 1018428160
+                    [first_name] => Felipe
+                    [type] => private
+                )
+
+            [date] => 1582307062
+            [text] => Xcc
+        )
+
+    [currentChat:TelegramBot:private] => 1018428160
+    [currentUser:TelegramBot:private] => 1018428160
+    [usersList:TelegramBot:private] => 
+    [lastUpdate:TelegramBot:private] => 261996128
+    [messageType:TelegramBot:private] => text
+)
+
+

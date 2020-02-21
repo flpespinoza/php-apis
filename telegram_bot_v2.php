@@ -5,7 +5,8 @@ class TelegramBot
     private $endPoint,
             $initTs,
             $curlObj, 
-            $currentMsg, 
+            $currentMsg,
+            $currentMsgId,
             $currentChat, 
             $currentUser, 
             $usersList,
@@ -102,7 +103,7 @@ class TelegramBot
     }
 
     /**
-    * Obtener último mensaje recibido por el bot    
+    * Obtener último mensaje recibido por el bot al iniciar  
     */
     private function initUpdate()
     {
@@ -144,9 +145,14 @@ class TelegramBot
     /*
     * Enviar un mensaje al usuario
     */
-    public function sendMessage($message, $markup = null)
+    public function sendMessage($message, $reply = null, $markup = null)
     {
         $args = array('chat_id' => $this->currentChat, 'text' => $message);
+        if($reply)
+        {
+            $args['reply_to_message_id'] = $this->currentMsgId;
+        }
+
         if($markup)
         {
             $args['reply_markup'] = json_encode($markup);
@@ -165,6 +171,7 @@ class TelegramBot
             $lastMsg = $lastMsg[count($lastMsg) - 1];
             $this->currentChat = $lastMsg['message']['chat']['id'];
             $this->currentMsg = $lastMsg['message'];
+            $this->currentMsgId = $lastMsg['message']['message_id'];
             $this->currentUser = $lastMsg['message']['from']['id'];
             $this->messageType = (isset($lastMsg['message']['contact'])) ? 'register' : 'text';
             $this->setLastUpdate($lastMsg['update_id'] + 1);
@@ -209,7 +216,7 @@ class TelegramBot
             'one_time_keyboard' => true
         );
 
-        return $this->sendMessage($msg, $markup);
+        return $this->sendMessage($msg, false, $markup);
     }
 
     public function getUserPhone()
