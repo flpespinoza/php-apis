@@ -1,28 +1,54 @@
 <?php
 
-include_once('telegram_bot_v3.php');
+include_once('telegram_bot_v2.php');
 //1087997685:AAEcieYMMY7v7ZQbwAOEe4rMZwba2MadpTw
 //1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q
 $token = '1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q';
 $times = 0;
 
 $bot = new TelegramBot($token);
-while($times < 30)
+$listaUsuarios = array('1018428163' => '3315745279', '1018428161' => '3315745278', '1018428162' => '3315745277' );
+while($times < 60)
 {
-    $currentMsg = $bot->getMessage();
-    if(!empty($currentMsg))
+    $bot->getMessage();
+    $lastMsg = $bot->getCurrentMessage();
+    if(!empty($lastMsg))
     {
-       $chat = $currentMsg['message']['chat']['id'];
-       if($bot->chatExists($chat))
+       if($phone = $bot->getUserPhone())
        {
-            $bot->setMsgInfo($chat);
+           $msgTxt = $lastMsg['text'];
+           $fechaMsg = date('Y-m-d H:i:s', $lastMsg['message']['date']);
+           $bot->sendChatAction();
+           if(obtener_venta_mensaje($msgTxt))
+           {   
+               $bot->sendMessage("Tu venta: {$msgTxt} ha sido solicitada", true);
+           }
+           else
+           {
+               $bot->sendMessage("Formato de mensaje incorrecto");
+           }
        }
        else
        {
-            if(isset($currentMsg['contact']))
-            {
-
-            }
+           if(array_key_exists($bot->getCurrentChat(), $listaUsuarios))
+           {
+              $phone = $listaUsuarios[$bot->getCurrentChat()];
+              $idTelegram = $bot->getCurrentChat();
+              $bot->setUserPhone($phone);
+              $bot->sendMessage("El usuario telegram {$idTelegram} se ha registrado con telefono {$phone} desde array"); 
+           }
+           elseif(isset($lastMsg['contact']))
+           {
+               $phoneUser  = $lastMsg['contact']['phone_number'];
+               $idTelegram = $bot->getCurrentChat();
+               
+               $bot->setUserPhone($phoneUser);
+               $bot->sendMessage("El usuario telegram {$idTelegram} se ha registrado con telefono {$phoneUser}");
+           }
+           else
+           {
+                $bot->requestUserData();
+           }
        } 
     }
 

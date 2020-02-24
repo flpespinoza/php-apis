@@ -18,7 +18,7 @@ class TelegramBot
     {
         $this->endPoint = "https://api.telegram.org/bot{$token}/";
         $this->initTs = time();
-        $this->initCurl();
+        $this->initCurl(); 
         try
         {
             $this->initBot();
