@@ -1,6 +1,6 @@
 <?php
 
-include_once('telegram_bot_v2.php');
+include_once('telegram_bot_v3.php');
 //1087997685:AAEcieYMMY7v7ZQbwAOEe4rMZwba2MadpTw
 //1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q
 $token = '1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q';
@@ -9,58 +9,26 @@ $times = 0;
 $bot = new TelegramBot($token);
 while($times < 30)
 {
-    $bot->getMessage();
-    $currentMsg = $bot->getCurrentMessage();
-
+    $currentMsg = $bot->getMessage();
     if(!empty($currentMsg))
     {
-       if($bot->getMesageType() == 'text')
+       $chat = $currentMsg['message']['chat']['id'];
+       if($bot->chatExists($chat))
        {
-           if($currentMsg['text'] == '/start')
-           {
-                $bot->sendMessage('Bienvenido, para comenzar enviar el mensaje /register');
-           }
-           elseif($currentMsg['text'] == '/register')
-           {
-                if(!$bot->getUserPhone())
-                {
-                    $bot->requestUserData();
-                }
-                else
-                {
-                    $bot->sendMessage('Tu usuario ya esta registrado con numero: ' . $bot->getUserPhone());
-                } 
-           }
-           else
-           {
-               if(!$bot->getUserPhone())
-                {
-                    $bot->requestUserData("Tu usuario no esta registrado, para hacerlo envia el mensaje /register");
-                }
-                else
-                {
-                    if(obtener_venta_mensaje($currentMsg['text']))
-                    {
-                        $bot->sendMessage("Tu solicitud de venta esta siendo atendida", true);
-                    }
-                    else
-                    {
-                        $bot->sendMessage("Sintaxis de venta incorrecta", true);
-                    }
-                }      
-           }       
+            $bot->setMsgInfo($chat);
        }
        else
        {
-            $bot->setUserPhone($currentMsg['contact']['phone_number']);
-            $bot->sendMessage("Tu usuario ha sido registrado correctamente");                
+            if(isset($currentMsg['contact']))
+            {
+
+            }
        } 
     }
 
     $times++;
     sleep(1);
 }
-
 
 function obtener_venta_mensaje($e_MSG)
 {

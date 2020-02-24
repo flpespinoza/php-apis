@@ -228,8 +228,13 @@ class TelegramBot
         $this->usersList[$this->currentUser] = substr($phoneNumber, 2);
     }
 
-    public function getMesageType()
+    public function getMessageType()
     {
         return $this->messageType;
+    }
+    
+    public function getCurrentChat()
+    {
+    	return $this->currentChat;
     }
 }
