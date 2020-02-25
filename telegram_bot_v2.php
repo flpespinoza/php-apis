@@ -61,8 +61,8 @@ class TelegramBot
         {
             $resp = array(
                 "ok" => false,
-                "error_code" => curl_errno($this->curl),
-                "error_descripcion" => curl_error($this->curl),
+                "error_code" => curl_errno($this->curlObj),
+                "error_descripcion" => curl_error($this->curlObj),
                 "curl_error" => true
             );
             return json_decode(json_encode($resp), true);
@@ -195,7 +195,7 @@ class TelegramBot
         $args = array('chat_id' => $this->currentChat, 'action' => 'typing');
         return $this->doRequest('sendChatAction', $args);
     }
-
+    
     public function requestUserData($msgTxt = "Para registrar tu teléfono presiona el boton de Registrar")
     {
         $markup = array
