@@ -1,61 +1,56 @@
 <?php
 
-include_once('telegram_bot_v2.php');
+include_once('telegram_bot_v3.php');
 //1087997685:AAEcieYMMY7v7ZQbwAOEe4rMZwba2MadpTw
 //1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q
-$token = '1028870597:AAFW0zL8IrVDBSDiEKESe__Op5rOClEKF7Q';
+$token = '1087997685:AAEcieYMMY7v7ZQbwAOEe4rMZwba2MadpTw';
 $times = 0;
 
-$bot = new TelegramBot($token);
-$listaUsuarios = array('1018428163' => '3315745279', '1018428161' => '3315745278', '1018428162' => '3315745277' );
+try
+{
+    $bot = new TelegramBot($token);
+    $bot->auth();
+    $bot->setInitUpdate();
+}
+catch(Exception $e)
+{
+    throw new Exception($e->getMessage());
+}
+
+//$listaUsuarios = array('1018428163' => '3315745279', '1018428161' => '3315745278', '1018428162' => '3315745277' );
+
 while($times < 60)
 {
-    $bot->getMessage();
-    $lastMsg = $bot->getCurrentMessage();
-    if(!empty($lastMsg))
+    $mensajes = $bot->getMessages();
+    if(count($mensajes))
     {
-       if($phone = $bot->getUserPhone())
-       {
-           $msgTxt = $lastMsg['text'];
-           $fechaMsg = date('Y-m-d H:i:s', $lastMsg['message']['date']);
-           $bot->sendChatAction();
-           if(obtener_venta_mensaje($msgTxt))
-           {   
-               $bot->sendMessage("Tu venta: {$msgTxt} ha sido solicitada", true);
-           }
-           else
-           {
-               $bot->sendMessage("Formato de mensaje incorrecto");
-           }
-       }
-       else
-       {
-           if(array_key_exists($bot->getCurrentChat(), $listaUsuarios))
-           {
-              $phone = $listaUsuarios[$bot->getCurrentChat()];
-              $idTelegram = $bot->getCurrentChat();
-              $bot->setUserPhone($phone);
-              $bot->sendMessage("El usuario telegram {$idTelegram} se ha registrado con telefono {$phone} desde array"); 
-           }
-           elseif(isset($lastMsg['contact']))
-           {
-               $phoneUser  = $lastMsg['contact']['phone_number'];
-               $idTelegram = $bot->getCurrentChat();
-               
-               $bot->setUserPhone($phoneUser);
-               $bot->sendMessage("El usuario telegram {$idTelegram} se ha registrado con telefono {$phoneUser}");
-           }
-           else
-           {
-                $bot->requestUserData();
-           }
-       } 
+        foreach($mensajes as $mensaje)
+        {
+            $bot->setCurrentMessage($mensaje);
+            $msgTxt = $bot->getTxtMsg();
+            if($bot->inChats())
+            {
+                $bot->sendReplyMessage("Respuesta");
+            }
+            else
+            {
+                //$tel = obtener_telefono_usuario($bot->getCurrentChat()) -> saveUserPhone($tel)
+                if($bot->isRegisterMessage())
+                {
+                    $bot->saveChat();
+                    $bot->sendMessage(array('text' => 'Usuario registrado correctamente'));
+                }
+                else
+                {
+                    $bot->sendRequestDataMessage();
+                }
+            }        
+        }
     }
-
     $times++;
     sleep(1);
 }
-
+/*
 function obtener_venta_mensaje($e_MSG)
 {
 	switch($e_MSG)
@@ -83,7 +78,7 @@ function obtener_venta_mensaje($e_MSG)
 	return $venta;
 	
 }
-
+*/
 
 
 ?>
