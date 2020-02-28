@@ -16,7 +16,7 @@ catch(Exception $e)
 }
 
 //$listaUsuarios = array('1018428163' => '3315745279', '1018428161' => '3315745278', '1018428162' => '3315745277' );
-$adminBot = "1018428160";
+$adminBot = "@botstx";
 
 while($times < 60)
 {
@@ -27,7 +27,7 @@ while($times < 60)
         $txt = $mensaje['text'];
         if($phone = $bot->getUserPhone())
         {
-            $bot->sendMessageToChat($adminBot, $txt);
+            $f = $bot->forwardMessage($adminBot, $mensaje['chat']['id'], $mensaje['message_id']);
             $bot->sendMessage("Respuesta a mensaje: {$txt}");
         }
         elseif(isset($mensaje['contact']))

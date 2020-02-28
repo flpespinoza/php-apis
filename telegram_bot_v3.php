@@ -248,4 +248,10 @@ class TelegramBot
     {
     	return array_search($phoneNumber, $this->usersList);
     }
+
+    public function forwardMessage($chatId, $fromChatId, $messageId)
+    {
+        $args = array('chat_id' => $chatId, 'from_chat_id' => $fromChatId, 'message_id' => $messageId);
+        return $this->doRequest('forwardMessage', $args);
+    }
 }
